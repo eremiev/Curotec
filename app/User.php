@@ -15,7 +15,27 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password',
+        'address',
+        'job_title',
+        'phone_country_code',
+        'phone_number',
+        'two_factor_options',
+        'integration_id',
+        'gateway',
+        'card_brand',
+        'card_last_four',
+        'trial_ends_at',
+        'payment_method_token',
+        'created_by',
+        'updated_by',
+        'deleted_at',
+        'created_at',
+        'updated_at',
+        'notification_preferences',
+        'reward_points',
     ];
 
     /**
@@ -26,4 +46,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Surveys to the User.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function surveys()
+    {
+        return $this->hasMany(Survey::class);
+    }
 }

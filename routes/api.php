@@ -18,5 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('display_data', 'DisplayDataController', [
-    'only' => ['index', 'create', 'show', 'store', 'edit', 'update', 'destroy']
+    'only' => ['index']
 ]);

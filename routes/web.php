@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('datatable');
 });
+
+Route::resource('survey', 'SurveyController', [
+    'only' => ['index', 'create', 'show', 'store', 'edit', 'update', 'destroy']
+]);
